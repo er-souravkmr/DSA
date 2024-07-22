@@ -21,8 +21,9 @@ public class LL {
     }
 
     public void insertLast(int val) {
-        if(tail == null){
+        if(head == null){
             insertFirst(val);
+            return;
         }
         Node node = new Node(val);
         tail.next = node;
@@ -53,7 +54,7 @@ public class LL {
 
     }
 
-    public void displayLL()
+    public void display()
     {
         Node temp = head ;
         while(temp != null){
@@ -144,5 +145,55 @@ public class LL {
             this.next = next;
         }
 
+    }
+
+
+    public static LL mergesort(Node head1 , Node head2){
+        Node f = head1;
+        Node s = head2;
+        LL ans = new LL();
+        while(f!=null && s!=null){
+            if(f.val<s.val){
+                ans.insertLast(f.val);
+                f=f.next;
+            }else{
+                ans.insertLast(s.val);
+                s=s.next;
+            }
+        }
+
+        while(f!=null){
+            ans.insertLast(f.val);
+            f=f.next;
+        }
+        while(s!=null){
+            ans.insertLast(s.val);
+            s=s.next;
+        }
+
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        LL first = new LL();
+        LL second = new LL();
+
+        first.insertLast(1);
+        first.insertLast(3);
+        first.insertLast(4);
+
+        first.display();
+
+        second.insertLast(1);
+        second.insertLast(4);
+        second.insertLast(6);
+        second.insertLast(8);
+
+        System.out.println();
+        second.display();
+        System.out.println();
+
+        LL ans = LL.mergesort(first.head, second.head);
+        ans.display();
     }
 }
