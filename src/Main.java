@@ -24,10 +24,11 @@ public class Main {
         list.insertLast(45);
 
         list.insert(55 , 3);
+
+        System.out.println(list.delete(4));
+
         list.display();
-
-        System.out.println(list.deleteLast());
-
+        list.insertLast(85);
         list.display();
     }
 }

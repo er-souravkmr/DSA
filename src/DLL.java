@@ -87,10 +87,31 @@ public class DLL {
         tail = temp.prev;
         temp.prev.next = null;
         size--;
+
         return val;
     }
 
+    public int delete(int  index ){
 
+        if(index == 1){
+            deleteFirst();
+        }
+        if(index == size){
+            deleteLast();
+        }
+
+        Node del = get(index);
+//        int val = del.val;
+
+        Node p = del.prev;
+        Node n = del.next;
+
+        p.next = n;
+        n.prev = p;
+
+        size--;
+        return del.val;
+    }
 
     public void display(){
         Node temp = head;
