@@ -42,9 +42,11 @@ public class DLL {
     public void insert(int val , int index){
         if(index == 0){
             insertFirst(val);
+            return;
         }
         if(index == size){
             insertLast(val);
+            return;
         }
 
         Node p = get(index-1);
@@ -92,15 +94,17 @@ public class DLL {
     }
 
     public int delete(int  index ){
-
+        Node del = get(index);
         if(index == 1){
             deleteFirst();
+            return del.val;
         }
         if(index == size){
             deleteLast();
+            return del.val;
         }
 
-        Node del = get(index);
+
 //        int val = del.val;
 
         Node p = del.prev;
