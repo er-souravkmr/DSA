@@ -19,13 +19,34 @@ public class Stacks {
 
 
         //  Testing of Custom Stack
-        CustomStack cs = new CustomStack(5);
+//        CustomStack cs = new CustomStack(5);
+//        cs.push(32);
+//        cs.push(2);
+//        cs.push(31);
+//        cs.push(30);
+//
+//
+//        System.out.println(cs.pop());
+//        System.out.println(cs.pop());
+//        System.out.println(cs.pop());
+//        System.out.println(cs.pop());
+
+
+
+//       Testing of Custom Dynamic Stack
+        DynamicStack cs = new DynamicStack(5);
         cs.push(32);
         cs.push(2);
         cs.push(31);
         cs.push(30);
+        cs.push(30);
+        cs.push(35);
+        cs.push(33);
 
 
+        System.out.println(cs.pop());
+        System.out.println(cs.pop());
+        System.out.println(cs.pop());
         System.out.println(cs.pop());
         System.out.println(cs.pop());
         System.out.println(cs.pop());
