@@ -1,4 +1,4 @@
-package Custom;
+package StackAndQueue;
 
 import CustomException.CustomException;
 
